@@ -28,12 +28,11 @@ get "/users" do
   erb :"/users/users"
 end
 
-delete "/user/:id" do
+delete "/users/:id" do
   User.delete(params["id"])
 end
 
-put "/user/:id/edit" do
-  binding.pry
+put "/users/:id/edit" do
   @user = User.find(params["id"])
   if @user.empty?
     redirect "/users"
@@ -42,7 +41,7 @@ put "/user/:id/edit" do
   end
 end
 
-put "user/update" do
+put "users/update" do
 end
 
 

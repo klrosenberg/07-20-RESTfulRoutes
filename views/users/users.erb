@@ -9,7 +9,7 @@
   </div>
     
   <div class="deleteuser">
-    <form action="user/:id" method="post">
+    <form action="users/:id" method="post">
       <label for="id">Select user to delete:</label>
       <select>
         <% User.all.each do |user| %>
@@ -22,7 +22,7 @@
   </div>
   
   <div class="updateuser">
-    <form action="user/:id/edit" method="post">
+    <form action="users/:id/edit" method="post">
       <label for="id">Select user to update:</label>
       <select>
         <% User.all.each do |user| %>

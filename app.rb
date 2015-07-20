@@ -9,7 +9,7 @@ require "active_record"
 
 configure :development do
   require "sqlite3"
-  ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'databse.db')
+  ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'database.db')
 end
 
 configure :production do  
