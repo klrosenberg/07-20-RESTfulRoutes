@@ -10,8 +10,8 @@
     
   <div class="deleteuser">
     <form action="user/:id" method="post">
-
-      <input type="text" name="id" value="enter user id you'd like to delete">
+      <label for="id">Enter id to delete:</label>
+      <input type="text" name="id">
       
       <input type="hidden" name="_method" value="delete">
 
@@ -20,12 +20,11 @@
   </div>
   
   <div class="updateuser">
-    <form action="user/:id" method="post">
- 
-      <input type="text" name="id" value="enter user id you'd like to update">
+    <form action="user/:id/edit" method="post">
+      <label for="id">Enter id to update:</label>
+      <input type="text" name="id">
           
       <input type="hidden" name="_method" value="put">
-          
       <input type="submit">  
     </form>
   </div>

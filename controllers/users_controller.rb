@@ -32,10 +32,11 @@ delete "/user/:id" do
   User.delete(params["id"])
 end
 
-put "/user/:id" do
+put "/user/:id/edit" do
+  binding.pry
   @user = User.find(params["id"])
   if @user.empty?
-    erb :"/users"
+    redirect "/users"
   else
     erb :"/users/edit"
   end
