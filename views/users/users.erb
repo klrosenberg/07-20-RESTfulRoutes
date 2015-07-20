@@ -8,29 +8,32 @@
     </ul>
   </div>
     
-  <div class="deleteuser">
-    <form action="users/<%= user.id %>" method="post">
+
+
+  <!-- <div class="deleteuser">
+    <form action="users/:id" method="post">
       <label for="id">Select user to delete:</label>
-      <select>
+      <select name="id">
         <% @users.each do |user| %>
+        <%binding.pry%>
           <option value="<% user.id %>"><%= user.name %></option>
         <% end %>
       </select>
       <input type="hidden" name="_method" value="delete">
-      <input type="submit"> 
+      <input type="submit">
     </form>
   </div>
-  
+
   <div class="updateuser">
-    <form action="users/<%= user.id %>/edit" method="post">
+    <form action="users/edit/:id" method="post">
       <label for="id">Select user to update:</label>
-      <select>
+      <select name="id">
         <% @users.each do |user| %>
           <option value="<% user.id %>"><%= user.name %></option>
         <% end %>
       </select>
       <input type="hidden" name="_method" value="put">
-      <input type="submit">  
-    
+      <input type="submit">
+
     </form>
-  </div>
+  </div> -->

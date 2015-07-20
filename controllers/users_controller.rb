@@ -39,12 +39,11 @@ get "/users" do
 end
 
 delete "/users/:id" do
-  User.delete(params["id"])
+  User.delete(params[:id])
 end
 
-put "/users/:id/edit" do
-  binding.pry
-  @user = User.find(params["id"])
+put "/users/edit/:id" do
+  @user = User.find(params[:id])
   if @user.empty?
     redirect "/users"
   else
