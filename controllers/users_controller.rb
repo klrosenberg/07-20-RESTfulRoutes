@@ -47,7 +47,12 @@ delete "/users/:id" do
   User.delete(params[:id])
 end
 
-put "users/update" do
+put "/users/users/update" do
+  @user = User.find(params["id"])
+  @user.name = params["name"]
+  @user.email = params["email"]
+  @user.save
+  erb :"/users/profile"
 end
 
 

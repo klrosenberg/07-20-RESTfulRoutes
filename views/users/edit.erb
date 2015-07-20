@@ -1,7 +1,7 @@
 
   <div class="edituser">
-    <form action="user/update" method="Post">
- 
+    <form action="users/update" method="Post">
+      <input type="hidden" name="id" value=<%= @user.id %>>
       <input type="text" name="name" value="<%= @user.name %>">
       
       <input type="text" name="email" value="<%= @user.email %>">
