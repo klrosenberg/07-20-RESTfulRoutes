@@ -1,11 +1,14 @@
 # -----------------------------------------------------------------------------
-# Show all users. Functionality to read, update or delete.
+# Form to create new password.
 # -----------------------------------------------------------------------------
 get "/users/new" do
   @user = User.new
   erb :"/users/new"
 end
 
+# -----------------------------------------------------------------------------
+# Save new user and encrypt password.
+# -----------------------------------------------------------------------------
 post "/users/users/create" do
   the_password = BCrypt::Password.create(params["password"])
   
@@ -19,12 +22,19 @@ post "/users/users/create" do
   end
 end
 
+# -----------------------------------------------------------------------------
+# Show user profile after signing up.
+# -----------------------------------------------------------------------------
 get "/users/:id" do
   @user = User.find(params[:id])
   erb :"/users/profile"
 end
 
+# -----------------------------------------------------------------------------
+# Show all users. Functionality to read, update or delete.
+# -----------------------------------------------------------------------------
 get "/users" do
+  @users = User.all
   erb :"/users/users"
 end
 
@@ -33,6 +43,7 @@ delete "/users/:id" do
 end
 
 put "/users/:id/edit" do
+  binding.pry
   @user = User.find(params["id"])
   if @user.empty?
     redirect "/users"
