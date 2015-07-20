@@ -10,21 +10,27 @@
     
   <div class="deleteuser">
     <form action="user/:id" method="post">
-      <label for="id">Enter id to delete:</label>
-      <input type="text" name="id">
-      
+      <label for="id">Select user to delete:</label>
+      <select>
+        <% User.all.each do |user| %>
+          <option value="<% user.id %>"><%= user.name %></option>
+        <% end %>
+      </select>
       <input type="hidden" name="_method" value="delete">
-
-      <input type="submit">  
+      <input type="submit"> 
     </form>
   </div>
   
   <div class="updateuser">
     <form action="user/:id/edit" method="post">
-      <label for="id">Enter id to update:</label>
-      <input type="text" name="id">
-          
+      <label for="id">Select user to update:</label>
+      <select>
+        <% User.all.each do |user| %>
+          <option value="<% user.id %>"><%= user.name %></option>
+        <% end %>
+      </select>
       <input type="hidden" name="_method" value="put">
       <input type="submit">  
+    
     </form>
   </div>
