@@ -8,6 +8,8 @@
     </ul>
   </div> -->
     
+    
+    <!-- TODO add link/button function to update/delete-->
   <form action="/users/edit">
     <table>
       <tr>
@@ -35,19 +37,5 @@
       </select>
       <input type="hidden" name="_method" value="delete">
       <input type="submit">
-    </form>
-  </div>
-
-  <div class="updateuser">
-    <form action="users/edit/:id" method="post">
-      <label for="id">Select user to update:</label>
-      <select name="id">
-        <% @users.each do |user| %>
-          <option value="<% user.id %>"><%= user.name %></option>
-        <% end %>
-      </select>
-      <input type="hidden" name="_method" value="put">
-      <input type="submit">
-
     </form>
   </div> -->
