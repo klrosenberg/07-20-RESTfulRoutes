@@ -6,7 +6,7 @@ get "/users/new" do
   erb :"/users/new"
 end
 
-post "/users/users/users/create" do
+post "/create" do
   the_password = BCrypt::Password.create(params["password"])
   
   @user= User.create({name: params["name"], email: params["email"], password: the_password})
@@ -19,10 +19,11 @@ post "/users/users/users/create" do
   end
 end
 
-get "users/:id"
-binding.pry
-User.find(params["user.id"])
-erb :"/profile"
+get "users/:id" do
+  User.find(params[:id])
+  erb :"/profile"
+end
+
 get "/users" do
   erb :"/users/users"
 end
@@ -42,4 +43,7 @@ end
 
 put "user/update" do
 end
+
+
+
 
