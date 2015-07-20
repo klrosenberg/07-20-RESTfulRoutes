@@ -1,1 +1,14 @@
-  <li><a href="/users/new">New user (Sign up)</li>
+<%= errormessages = @user.errors.full_messages %>
+
+<h2>New user creation</h2>
+<form action="users/create" method="post">
+  <label for="name">Name:</label>
+  <input type="text" name="name">
+    
+  <label for="name">E-mail:</label>
+  <input type="email" name="email">
+    
+  <label for="name">Password:</label>
+  <input type="password" name="password">
+  <input type="submit">
+</form>

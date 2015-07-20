@@ -1,0 +1,13 @@
+
+  <div class="edituser">
+    <form action="user/update" method="Post">
+ 
+      <input type="text" name="name" value="<%= @user.name %>">
+      
+      <input type="text" name="email" value="<%= @user.email %>">
+      
+      <input type="hidden" name="_method" value="put">
+          
+      <input type="submit">  
+    </form>
+  </div>

@@ -1,3 +1,3 @@
-class User < AcitveRecord::Base
+class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 end
