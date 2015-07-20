@@ -22,6 +22,11 @@ post "/users/users/create" do
   end
 end
 
+get "/users/edit" do
+  @user = User.find(params["id"])
+  erb :"/users/edit"
+end
+
 # -----------------------------------------------------------------------------
 # Show user profile after signing up.
 # -----------------------------------------------------------------------------
@@ -40,15 +45,6 @@ end
 
 delete "/users/:id" do
   User.delete(params[:id])
-end
-
-put "/users/edit/:id" do
-  @user = User.find(params[:id])
-  if @user.empty?
-    redirect "/users"
-  else
-    erb :"/users/edit"
-  end
 end
 
 put "users/update" do
