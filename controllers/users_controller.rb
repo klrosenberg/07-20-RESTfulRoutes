@@ -53,8 +53,8 @@ get "/users/:id" do
   erb :"/users/profile"
 end
 
-delete "/users/delete/:id" do
-  User.delete(params[:id])
+delete "/users/users/delete" do
+  User.delete(params["id"])
 end
 
 put "/users/users/update" do
