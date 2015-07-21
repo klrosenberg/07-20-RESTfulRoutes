@@ -10,22 +10,24 @@
     
     
     <!-- TODO add link/button function to update/delete-->
-  <form action="/users/edit">
-    <table>
-      <tr>
-        <th>All users</th>
-      </tr>
-      <tr>
-    <% User.all.each do |user| %>
-        <td><input type="radio" name="id" value="<%= user.id %>"><%= user.name%></td>
-        <td><%= user.email %></td>
-        <td><%= user.password %></td>
-      </tr>
-    <% end %>
-  </table>
-    <input type="hidden" name="_method" value="put">
-    <p><input type="submit"></p>
-  </form> 
+    <form>
+      <table>
+        <tr>
+          <th>All users</th>
+        </tr>
+        <tr>
+          <% User.all.each do |user| %>
+          <td><input type="radio" name="id" value="<%= user.id %>"><%= user.name%></td>
+          <td><%= user.email %></td>
+          <td><%= user.password %></td>
+        </tr>
+        <% end %>
+      </table>
+      <input type="hidden" name="_method" value="put">
+      <a href="/users/users/update">Update</a>
+      <a href="/users/delete">Delete</a>
+      <!-- <p><input type="submit"></p> -->
+    </form> 
 
   <!-- <div class="deleteuser">
     <form action="users/:id" method="post">
