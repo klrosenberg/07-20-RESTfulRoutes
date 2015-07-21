@@ -1,7 +1,14 @@
 # -----------------------------------------------------------------------------
 # Select user to find all stories by that user
 # -----------------------------------------------------------------------------
-get "stories/find" do
+get "/stories/find" do
+  erb :"/stories/story_find_by_user_form"
+end
+
+get "stories/list_by_user" do
+  @user = User.find(params["id"])
+  @stories = Stories.where("user_id", params["user.id"])
+  erb :"/stories/list"
 end
 
 
@@ -17,8 +24,15 @@ end
 # -----------------------------------------------------------------------------
 
 get "/stories/new" do
+  erb :"/stories/new_story_form"
 end
 
+get "/stories/save" do
+  Story.create({"title" => params["title"], "user_id" => params["user_id"]})
+  @user = User.find(params["user.id"])
+  @stories = Stories.where("user_id", params["user.id"])
+  erb :"/stories/list"
+end
 
 
 # -----------------------------------------------------------------------------

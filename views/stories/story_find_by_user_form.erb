@@ -1,0 +1,13 @@
+<form action="stories/list_by_user">
+  <table>
+    <tr>
+      <th>Select the user you'd like to see stories of.</th>
+    </tr>
+    <tr>
+      <% User.all.each do |user| %>
+      <td><input type="radio" name="id" value="<%= user.id %>"><%= user.name%></td>
+    </tr>
+    <% end %>
+  </table>
+  <p><input type="submit"></p>
+</form> 
