@@ -5,3 +5,9 @@ unless ActiveRecord::Base.connection.table_exists?(:users)
     t.text :password
   end  
 end
+
+unless ActiveRecord::Base.connection.table_exists?(:stories)
+  ActiveRecord::Base.connection.create_table :stories do |t|
+    t.string :title
+  end  
+end
