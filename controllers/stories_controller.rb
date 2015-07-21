@@ -7,7 +7,6 @@ end
 
 get "/stories/stories/list_by_user" do
   user_id = params["id"]
-  binding.pry
   @user = User.find(user_id)
   @stories = Story.where("user_id = #{user_id}")
   erb :"/stories/list"
