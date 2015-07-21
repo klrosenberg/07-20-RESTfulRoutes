@@ -1,0 +1,12 @@
+<h2><%= @user.name %>'s Stories:</h2>  
+<table>
+  <tr>
+    <th>All stories</th>
+  </tr>
+  <tr>
+    <% @stories.each do |story| %>
+    <td><%= story.title%></td>
+    <td><a href="/stories/<%= title.id %>/edit">Edit story</td>
+  </tr>
+  <% end %>
+</table>
