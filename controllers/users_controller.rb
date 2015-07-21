@@ -46,7 +46,9 @@ get "/users/update" do
 end
 
 delete "/users/delete" do
-  User.delete(params["id"])
+  User.delete(params["id"].to_i)
+  @users = User.all
+  erb :"/users/users"
 end
 
 # -----------------------------------------------------------------------------
