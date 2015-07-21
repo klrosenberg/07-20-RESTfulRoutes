@@ -42,7 +42,7 @@ end
 
 get "/users/update" do
   @users = User.all
-  erb :"/users/users_delete_form"
+  erb :"/users/users_update_form"
 end
 
 # -----------------------------------------------------------------------------
