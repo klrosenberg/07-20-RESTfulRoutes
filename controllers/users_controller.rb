@@ -36,13 +36,21 @@ get "/users/delete" do
   erb :"/users/delete_form"
 end
 
+delete "/users/confirm_delete" do
+  @user_id = params["id"]
+  User.delete(@user_id)
+  @users = User.all
+  erb :"users/index"
+end
+
 # -----------------------------------------------------------------------------
 # Form to delete user
 # -----------------------------------------------------------------------------
-delete "/users/:id" do
-  User.delete(params[:id])
-  erb :"/users/index"
-end
+# delete "/users/:id" do
+#   binding.pry
+#   User.delete(params[:id])
+#   erb :"/users/index"
+# end
 
 # -----------------------------------------------------------------------------
 # Form to edit user +++
