@@ -35,7 +35,7 @@ get "/users" do
   erb :"/users/users"
 end
 
-get "/users/delete" do
+get "/users/select" do
   @users = User.all
   erb :"/users/users_delete_form"
 end
@@ -53,7 +53,7 @@ get "/users/:id" do
   erb :"/users/profile"
 end
 
-delete "/users/users/delete" do
+delete "/users/delete" do
   User.delete(params["id"])
 end
 
