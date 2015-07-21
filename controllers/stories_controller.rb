@@ -23,7 +23,7 @@ end
 # Signed in user Creates a story CANNOT create a story for another user 
 # -----------------------------------------------------------------------------
 
-get "/stories/new" do
+get '/stories/new' do
   erb :"/stories/new_story_form"
 end
 
