@@ -10,7 +10,7 @@
     
   <h2>Pick a user to delete</h2>
     <!-- TODO add link/button function to update/delete-->
-  <form action="/users/delete">
+  <form action="/users/delete" method="post">
     <table>
       <tr>
         <th>All users</th>
@@ -23,6 +23,7 @@
       </tr>
     <% end %>
   </table>
+    <input type="hidden" name="_method" value="delete">
     <p><input type="submit"></p>
   </form> 
 

@@ -45,16 +45,16 @@ get "/users/update" do
   erb :"/users/users_update_form"
 end
 
+delete "/users/delete" do
+  User.delete(params["id"])
+end
+
 # -----------------------------------------------------------------------------
 # Show user profile after signing up.
 # -----------------------------------------------------------------------------
 get "/users/:id" do
   @user = User.find(params[:id])
   erb :"/users/profile"
-end
-
-delete "/users/delete" do
-  User.delete(params["id"])
 end
 
 put "/users/users/update" do
