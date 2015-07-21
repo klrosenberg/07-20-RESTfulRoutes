@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # Select user to find all stories by that user
 # -----------------------------------------------------------------------------
-get "stories/find"do
+get "stories/find" do
 end
 
 
@@ -12,11 +12,22 @@ end
 get "/stories/update" do
 end
 
+# -----------------------------------------------------------------------------
+# Signed in user Creates a story CANNOT create a story for another user 
+# -----------------------------------------------------------------------------
+
+get "/stories/new" do
+end
 
 
-<li><a href="/stories/new">Create a new story (user must be logged in and story belongs to this user)</li>
 
-<li><a href="/stories/select">Delete users story</li>
+# -----------------------------------------------------------------------------
+# takes you to a list of stories to select which one to delete.. with some route handling help
+# -----------------------------------------------------------------------------
+
+get "/stories/select" do
+end
+
 
 
 # -----------------------------------------------------------------------------
