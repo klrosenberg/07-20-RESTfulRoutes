@@ -5,9 +5,11 @@ get "/stories/find" do
   erb :"/stories/story_find_by_user_form"
 end
 
-get "stories/list_by_user" do
-  @user = User.find(params["id"])
-  @stories = Stories.where("user_id", params["user.id"])
+get "/stories/stories/list_by_user" do
+  user_id = params["id"]
+  binding.pry
+  @user = User.find(user_id)
+  @stories = Story.where("user_id = #{user_id}")
   erb :"/stories/list"
 end
 
@@ -27,10 +29,12 @@ get '/stories/new' do
   erb :"/stories/new_story_form"
 end
 
-get "/stories/save" do
-  Story.create({"title" => params["title"], "user_id" => params["user_id"]})
-  @user = User.find(params["user.id"])
-  @stories = Stories.where("user_id", params["user.id"])
+post "/stories/save" do
+  user_id = params["id"]
+  Story.create({"title" => params["title"], "user_id" => user_id})
+  @user = User.find(params["user_id"])
+  ("user_id = 1")
+  @stories = Story.where("user_id = #{user_id}")
   erb :"/stories/list"
 end
 
