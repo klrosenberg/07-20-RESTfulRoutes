@@ -1,0 +1,16 @@
+<h2>Pick a user to update</h2>  
+<form action="/users/:id/edit">
+  <table>
+    <tr>
+      <th>All users</th>
+    </tr>
+    <tr>
+  <% User.all.each do |user| %>
+      <td><input type="radio" name="id" value="<%= user.id %>"><%= user.name%></td>
+      <td><%= user.email %></td>
+      <td><%= user.password %></td>
+    </tr>
+  <% end %>
+</table>
+  <p><input type="submit"></p>
+</form> 

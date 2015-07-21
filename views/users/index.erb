@@ -1,0 +1,14 @@
+<h2>All users</h2>  
+<table>
+  <tr>
+    <th>All users</th>
+  </tr>
+  <tr>
+    <% @users.each do |user| %>
+    <td><%= user.name%></td>
+    <td><%= user.email %></td>
+    <td><%= user.password %></td>
+    <td><a href="/users/<%= user.id %>/edit">Edit user</td>
+  </tr>
+  <% end %>
+</table>
