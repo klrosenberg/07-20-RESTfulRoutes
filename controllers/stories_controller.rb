@@ -29,7 +29,8 @@ get '/stories/new' do
 end
 
 post "/stories/save" do
-  user_id = params["id"]
+  binding.pry
+  user_id = params["user_id"]
   Story.create({"title" => params["title"], "user_id" => user_id})
   @user = User.find(params["user_id"])
   ("user_id = 1")
