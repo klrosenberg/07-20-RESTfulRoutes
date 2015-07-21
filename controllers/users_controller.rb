@@ -28,14 +28,6 @@ get "/users/edit" do
 end
 
 # -----------------------------------------------------------------------------
-# Show user profile after signing up.
-# -----------------------------------------------------------------------------
-get "/users/:id" do
-  @user = User.find(params[:id])
-  erb :"/users/profile"
-end
-
-# -----------------------------------------------------------------------------
 # Show all users. Functionality to read, update or delete.
 # -----------------------------------------------------------------------------
 get "/users" do
@@ -43,8 +35,26 @@ get "/users" do
   erb :"/users/users"
 end
 
-delete "/users/delete" do
-  User.delete(params["id"])
+get "/users/delete" do
+  @users = User.all
+  erb :"/users/users_delete_form"
+end
+
+get "/users/update" do
+  @users = User.all
+  erb :"/users/users_delete_form"
+end
+
+# -----------------------------------------------------------------------------
+# Show user profile after signing up.
+# -----------------------------------------------------------------------------
+get "/users/:id" do
+  @user = User.find(params[:id])
+  erb :"/users/profile"
+end
+
+delete "/users/delete/:id" do
+  User.delete(params[:id])
 end
 
 put "/users/users/update" do
