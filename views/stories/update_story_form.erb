@@ -1,0 +1,7 @@
+<form action="/stories/update_save" method="post">
+<label for="title">Insert new title</label>
+<input type="hidden" value="<%=@story.id%>" name="id">
+<input type="text" value="<%=@story.title%>" name="title">
+<input type="hidden" value="put" name="_method" >
+  <p><input type="submit"></p>
+</form> 

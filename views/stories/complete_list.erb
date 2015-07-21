@@ -1,0 +1,27 @@
+<form action="/stories/delete">
+  <table>
+    <tr>
+      <th>Pick a story to delete</th>
+    </tr>
+    <tr>
+      <% Story.all.each do |story| %>
+      <td><input type="radio" name="id" value="<%= story.id %>"><%= story.title%></td>
+    </tr>
+    <% end %>
+  </table>
+  <p><input type="submit"></p>
+</form> 
+
+<form action="/stories/update">
+  <table>
+    <tr>
+      <th>Pick a story to update</th>
+    </tr>
+    <tr>
+      <% Story.all.each do |story| %>
+      <td><input type="radio" name="id" value="<%= story.id %>"><%= story.title%></td>
+    </tr>
+    <% end %>
+  </table>
+  <p><input type="submit"></p>
+</form> 
